@@ -21,13 +21,12 @@ public class GrammarExercise {
         //在这编写实现代码
         List<String> first = new ArrayList<>(Arrays.asList(firstWordList.split(",")));
         List<String> second = new ArrayList<>(Arrays.asList(secondWordList.split(",")));
-        ArrayList<String> firstAfterUpper = new ArrayList<>();
-        ArrayList<String> secondAfterUpper = new ArrayList<>();
+        ArrayList<String> firstAfterUpper;
+        ArrayList<String> secondAfterUpper;
         firstAfterUpper = getUpperSpace(first);
         secondAfterUpper = getUpperSpace(second);
         firstAfterUpper.retainAll(secondAfterUpper);
-        List<String> expected = firstAfterUpper.stream().distinct().collect(Collectors.toList());
-        //List<String> expected sort
+        List<String> expected = firstAfterUpper.stream().distinct().sorted().collect(Collectors.toList());
         return expected;
     }
 
